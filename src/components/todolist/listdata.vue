@@ -69,6 +69,24 @@
                 <div>
                     <label><strong>Description:</strong></label> {{ currenttodo.detail }}
                 </div>
+                <div>
+                    <label><strong>Todo at:</strong></label> {{ format_date(currenttodo.todo_at) }}
+                </div>
+                <div>
+                    <label><strong>is Finish:</strong></label>
+                    <div class="ml-5">
+                        <span :class="currenttodo.is_finish ? 'text-success' : 'text-danger'">{{ currenttodo.is_finish ? 'Yes' : 'No' }}</span>
+                    </div>
+                    <div class="ml-5" v-if="currenttodo.is_finish_at">
+                        <span>{{ format_date(currenttodo.is_finish_at) }}</span>
+                    </div>
+                </div>
+                <div>
+                    <label><strong>is Notify:</strong></label>
+                    <div class="ml-5">
+                        <span :class="currenttodo.is_notified ? 'text-success' : 'text-danger'">{{ currenttodo.is_notified ? 'Yes' : 'No' }}</span>
+                    </div>
+                </div>
 
                 <router-link :to="'/todo/' + currenttodo._id" class="btn btn-warning">Edit</router-link>
             </div>
