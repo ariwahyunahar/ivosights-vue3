@@ -11,7 +11,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <a class="navbar-brand" href="#">Todo Application</a>
+                <a class="navbar-brand" href="#">Todo Application</a> <span class="text-white">|</span>
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
                         <router-link to="/todos" class="nav-link">All Todo</router-link>

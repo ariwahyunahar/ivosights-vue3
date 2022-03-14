@@ -49,6 +49,8 @@
                 >
                     <div style="float: right;">
                         <button @click="setActivetodo(todo, index)" class="btn btn-success btn-sm">View</button>
+                        <button v-if="!todo.is_finish" @click="finish(todo)" class="btn btn-sm btn-warning ml-2">Finish</button>
+                        <button v-if="todo.is_finish" class="btn btn-sm btn-light ml-2" disabled>Finished</button>
                         <button @click="deletetodo(todo)" class="btn btn-danger btn-sm ml-2">Delete</button>
                     </div>
                     <div class="font-weight-bold">{{ todo.name }}</div>
@@ -185,6 +187,16 @@
             deletetodo(todo) {
                 if(!confirm('Are yout sure ?')) return false;
                 TodoDataService.delete(todo._id)
+                    .then(() => {
+                        this.refreshList();
+                    })
+                    .catch(e => {
+                        console.log(e);
+                    });
+            },
+            finish(todo_data) {
+                if(!confirm('Are yout sure ?')) return false;
+                TodoDataService.finish(todo_data)
                     .then(() => {
                         this.refreshList();
                     })

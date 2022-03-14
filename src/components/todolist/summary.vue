@@ -17,7 +17,7 @@
                         {{ data.detail }}<br>
                         <small>{{ format_date(data.todo_at) }}</small>
                     </td>
-                    <th><button class="btn btn-sm btn-success" @click="finish(1, data)">Finish</button></th>
+                    <th><button class="btn btn-sm btn-warning" @click="finish(1, data)">Finish</button></th>
                 </tr>
             </table>
         </div>
@@ -38,7 +38,7 @@
                         {{ data.detail }}<br>
                         <small class="text-danger">{{ format_date(data.todo_at) }}</small>
                     </td>
-                    <th><button class="btn btn-sm btn-success" @click="finish(0, data)">Finish</button></th>
+                    <th><button class="btn btn-sm btn-warning" @click="finish(0, data)">Finish</button></th>
                 </tr>
             </table>
         </div>
