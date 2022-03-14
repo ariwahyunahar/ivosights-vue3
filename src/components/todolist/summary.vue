@@ -19,6 +19,10 @@
                     </td>
                     <th><button class="btn btn-sm btn-warning" @click="finish(1, data)">Finish</button></th>
                 </tr>
+
+                <tr v-if="!todos.length">
+                    <td colspan="3" class="text-info"><i>Empty.</i></td>
+                </tr>
             </table>
         </div>
         <div class="col-md-4">
@@ -40,6 +44,9 @@
                     </td>
                     <th><button class="btn btn-sm btn-warning" @click="finish(0, data)">Finish</button></th>
                 </tr>
+                <tr v-if="!todospast.length">
+                    <td colspan="3" class="text-info"><i>Empty.</i></td>
+                </tr>
             </table>
         </div>
 
@@ -60,6 +67,9 @@
                         <small>{{ format_date(data.todo_at) }}</small><br>
                         Finish at: {{ format_date(data.is_finish_at) }}
                     </td>
+                </tr>
+                <tr v-if="!todosfinish.length">
+                    <td colspan="3" class="text-info"><i>Empty.</i></td>
                 </tr>
             </table>
         </div>
